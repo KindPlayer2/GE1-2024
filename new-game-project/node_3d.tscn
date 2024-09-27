@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://dc4f0aaroh6q7"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_q5po6"]
+[ext_resource type="Script" path="res://node_3d.gd" id="2_vxhlg"]
+[ext_resource type="PackedScene" uid="uid://dt41ccxu5ytx5" path="res://brick.tscn" id="3_ksnlb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhq03"]
+albedo_color = Color(0, 0.657002, 0.250249, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_buuda"]
+material = SubResource("StandardMaterial3D_fhq03")
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qcfh"]
+albedo_color = Color(0.0901961, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pauem"]
+material = SubResource("StandardMaterial3D_2qcfh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1fsw"]
+albedo_color = Color(0.0509804, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c0wd8"]
+material = SubResource("StandardMaterial3D_r1fsw")
+size = Vector3(0.1, 0.1, 2)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_buuda")
+
+[node name="Player" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.582066, 0)
+mesh = SubResource("BoxMesh_pauem")
+script = ExtResource("1_q5po6")
+
+[node name="turret" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.535993, 0.500635)
+mesh = SubResource("BoxMesh_c0wd8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.883994, 0.395328, -0.249539, -0.0123759, 0.553379, 0.832838, 0.467334, -0.733136, 0.494076, -12.6189, 5.52865, 2.99824)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999923, 0.0072951, 0.0100116, -0.00804, 0.997037, 0.0765008, -0.00942381, -0.0765754, 0.997019, 0.0496993, 0.824601, 7.42365)
+
+[node name="wall" type="Node3D" parent="."]
+script = ExtResource("2_vxhlg")
+brick_scene = ExtResource("3_ksnlb")
+
+[node name="Node3D" parent="." instance=ExtResource("3_ksnlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66974, 2.9495, 10.1591)
