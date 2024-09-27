@@ -47,6 +47,3 @@ transform = Transform3D(0.999923, 0.0072951, 0.0100116, -0.00804, 0.997037, 0.07
 [node name="wall" type="Node3D" parent="."]
 script = ExtResource("2_vxhlg")
 brick_scene = ExtResource("3_ksnlb")
-
-[node name="Node3D" parent="." instance=ExtResource("3_ksnlb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66974, 2.9495, 10.1591)
