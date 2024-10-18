@@ -65,3 +65,21 @@ func _physics_process(delta: float) -> void:
 		bullet.global_rotation = global_rotation
 		timer.start()
 	pass
+
+@export var Enemy:Node3D
+
+func _process(delta: float) -> void:
+	var e = $"../Enemy"
+	
+	var toEnemy:Vector3 = e.global_position - global_position
+	
+	toEnemy = toEnemy.normalized()
+	
+	var d:float = global_transform.basis.z.dot(toEnemy)
+	
+	var theta = acos(d)
+	
+	theta = rad_to_deg(theta)
+	
+	DebugDraw2D.set_text("theta", theta)
+	pass

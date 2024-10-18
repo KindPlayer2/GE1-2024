@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2cnv7v7huh3k"]
+[gd_scene load_steps=17 format=3 uid="uid://d2cnv7v7huh3k"]
 
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="1_1bql5"]
 [ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://green.tres" id="1_ljfv3"]
@@ -23,6 +23,12 @@ size = Vector3(0.1, 0.1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yo8sf"]
 size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iilyv"]
+albedo_color = Color(0.996078, 0.0156863, 0.0666667, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6ht6e"]
+material = SubResource("StandardMaterial3D_iilyv")
 
 [node name="root" type="Node3D"]
 
@@ -93,3 +99,7 @@ brick_scene = ExtResource("5_nw2f7")
 radius = 5.0
 elements = 22
 brick_size = 1.0
+
+[node name="Enemy" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9992, 0.501322, 0)
+mesh = SubResource("BoxMesh_6ht6e")
