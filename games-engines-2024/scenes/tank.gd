@@ -5,7 +5,7 @@ extends CharacterBody3D
 
 @export var bullet_scene:PackedScene
 @export var bullet_spawn:Node3D
-
+#hello
 @export var fire_rate:int = 10
 
 @onready  var timer = $Timer
