@@ -36,7 +36,7 @@ var can_fire:bool = true
 func _physics_process(delta: float) -> void:
 
 	print_stuff()
-
+	#third commit
 	# Other ways of moving by manipulating the transform	
 	# position.z += speed * delta
 	# global_position.z += speed * delta
@@ -78,6 +78,7 @@ func _process(delta: float) -> void:
 	var d:float = global_transform.basis.z.dot(toEnemy)
 	
 	var theta = acos(d)
+	
 	
 	theta = rad_to_deg(theta)
 	
