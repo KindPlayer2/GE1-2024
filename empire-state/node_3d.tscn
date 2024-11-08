@@ -21,7 +21,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 190, 0)
 size = Vector3(1, 380, 1)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 380, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29489, 380, 0)
+radius = 6.091
 height = 0.1
 script = ExtResource("1_q7jw7")
 
